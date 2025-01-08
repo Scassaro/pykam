@@ -6,7 +6,20 @@ def getStrategiesForTokenHash(tokenHash):
     print("list strategies")
     print(requests.get(url).text)
 
+def collectStrategies():
+    url = "https://api.kamino.finance/strategies/enabled?env=mainnet"
+    print("list strategies")
+    print(requests.get(url).text)
+
+def getYields():
+
+    url = "https://api.kamino.finance/v2/staking-yields/median"
+    print("list yields")
+    print(requests.get(url).text)
+
 def main():
+
+    solscanApiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkQXQiOjE3MzYzMTczNzMyMDcsImVtYWlsIjoic3JjYXNzYXJvQGdtYWlsLmNvbSIsImFjdGlvbiI6InRva2VuLWFwaSIsImFwaVZlcnNpb24iOiJ2MiIsImlhdCI6MTczNjMxNzM3M30.tUqB72JHW34L2BvTiERUGiLk7mcjl-jFUe89Be6ytjA"
 
     # get shareholder rewards
     #GET https://api.kamino.finance/strategies/shareholders/:shareholder_pubkey/rewards/history?env={cluster}
@@ -22,7 +35,7 @@ def main():
     # Token strategies
     cbBtc = "7u3HeHxYDLhnCoErrtycNokbQYbWGzLs6JSDqGAv5PfF/37Jk2zkz23vkAYBT66HM2gaqJuNg2nYLsCreQAVt5MWK"
 
-    getStrategiesForTokenHash(cbBtc)
+    getYields()
 
     publicStrategiesUrl = "https://api.kamino.finance/strategies/Cfuy5T6osdazUeLego5LFycBQebm9PP3H7VNdCndXXEN/shareholders/HZYHFagpyCqXuQjrSCN2jWrMHTVHPf9VWP79UGyvo95L/fees-and-rewards?env=mainnet-beta"
 
